@@ -16,13 +16,20 @@ import { cartEntity } from './Entities/createCart.Entity';
 
 @Module({
   imports: [
+    // TypeOrmModule.forRoot({
+    //   type: 'mysql',
+    //   host: 'localhost',
+    //   port: 3306,
+    //   username: 'root',
+    //   password: '',
+    //   database: 'farm_connect',
+    //   entities: [Task, notifacationEntity,listingEntity,cartEntity ],
+    //   synchronize: false,
+    // }),
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: '',
-      database: 'farm_connect',
+      type: 'postgres',
+      url: 'postgres://qdjkkngz:oB8xjyAQIR9WsqmZiGlf808y8oH819c0@raja.db.elephantsql.com/qdjkkngz',
+    
       entities: [Task, notifacationEntity,listingEntity,cartEntity ],
       synchronize: false,
     }),
