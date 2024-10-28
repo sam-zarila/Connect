@@ -31,7 +31,7 @@ import { cartEntity } from './Entities/createCart.Entity';
       url: 'postgres://qdjkkngz:oB8xjyAQIR9WsqmZiGlf808y8oH819c0@raja.db.elephantsql.com/qdjkkngz',
     
       entities: [Task, notifacationEntity,listingEntity,cartEntity ],
-      synchronize: false,
+      synchronize: true,
     }),
     TasksModule,
     NotificationModule,
