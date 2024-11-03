@@ -44,4 +44,21 @@ export class CartService {
             throw new Error('Could not fetch cart items');
         }
     }
+
+    async deleteFromCart(itemId:number): Promise<{message:string}> {
+        try {
+
+            const item = await this.cartRepository.findOne({ where: { id: itemId } });
+            
+            if(!item){
+                throw new Error('Item not found in cart');
+            }
+
+            await this.cartRepository.remove(item);
+            return { message: 'Item removed from cart' };
+            
+        } catch (error) {
+            
+        }
+    }
 }
