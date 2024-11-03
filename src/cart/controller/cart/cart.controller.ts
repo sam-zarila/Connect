@@ -34,7 +34,20 @@ export class CartController {
   @Delete(':id')
   async deleteFromCart(@Param('id') id:number){
 
-    
+    try {
+      const result = await this.cartService.deleteFromCart(id);
+      return result;
+      
+    } catch (error) {
+      if(error.status === HttpStatus.NOT_FOUND){
+
+        throw new HttpException('Item not found in cart', HttpStatus.NOT_FOUND);
+
+      }
+
+      throw new HttpException('Could not delete item from cart', HttpStatus.BAD_REQUEST);
+      
+    }
   }
 
 }
