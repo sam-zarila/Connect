@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpException, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CartService } from 'src/cart/services/cart/cart.service';
 import { addToCartDto } from 'src/DTOs/cart.Dto';
@@ -30,4 +30,11 @@ export class CartController {
       throw new HttpException('Could not fetch cart items', HttpStatus.BAD_REQUEST);
     }
   }
+
+  @Delete(':id')
+  async deleteFromCart(@Param('id') id:number){
+
+    
+  }
+
 }
