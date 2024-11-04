@@ -12,6 +12,10 @@ import { ListingModule } from './listing/listing.module';
 import { listingEntity } from './Entities/listing.Entity';
 import { CartModule } from './cart/cart.module';
 import { cartEntity } from './Entities/createCart.Entity';
+import { FarmtoolsController } from './farmtools/farmtools.controller';
+
+import { FarmtoolsModule } from './farmtools/farmtools.module';
+import { farmEntity } from './Entities/FarmEntity';
 
 
 @Module({
@@ -23,16 +27,17 @@ import { cartEntity } from './Entities/createCart.Entity';
       username: 'root',
       password: '',
       database: 'farm_connect',
-      entities: [Task, notifacationEntity,listingEntity,cartEntity ],
+      entities: [Task, notifacationEntity,listingEntity,cartEntity, farmEntity ],
       synchronize: false,
     }),
   
     TasksModule,
     NotificationModule,
     ListingModule,
-    CartModule
+    CartModule,
+    FarmtoolsModule
   ],
-  controllers: [AppController, NotificationController],
+  controllers: [AppController, NotificationController, FarmtoolsController],
   providers: [AppService, NotificationService],
 })
 export class AppModule {}
