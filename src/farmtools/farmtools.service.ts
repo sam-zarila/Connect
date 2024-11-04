@@ -22,4 +22,9 @@ export class FarmtoolsService {
     return this.farmToolsRepository.find()
   }
  
+  async removefarmTools( id :number) :Promise<void>{
+
+    await this.farmToolsRepository.delete(id);
+
+  }
 }
