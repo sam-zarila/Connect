@@ -17,5 +17,9 @@ export class FarmtoolsService {
 
     return this.farmToolsRepository.save(farm);
   }
+
+  findFarmTools() : Promise<farmEntity[]>{
+    return this.farmToolsRepository.find()
+  }
  
 }
