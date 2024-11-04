@@ -1,8 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { farmToolDto } from 'src/DTOs/createFarmTool.Dto';
+import { InjectRepository } from '@nestjs/typeorm';
+
+import { farmEntity } from 'src/Entities/FarmEntity';
+import { Repository } from 'typeorm';
 
 
 @Injectable()
 export class FarmtoolsService {
+
+  constructor(
+
+    @InjectRepository(farmEntity) private farmToolsRepository: Repository<farmEntity>,
+  ){}
+
+  createFarmTools(){}
  
 }
