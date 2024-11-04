@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { FarmtoolsService } from './farmtools.service';
 import { farmEntity } from 'src/Entities/FarmEntity';
-import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { farmToolDto } from 'src/DTOs/createFarmTool.Dto';
 
 
@@ -30,6 +30,13 @@ findFarmTools():Promise<farmToolDto[]>{
 
 @Delete()
 @ApiOperation({summary:'deleting farm tools'})
+@ApiParam({name:'id', description:'is the id of the farm', type:Number})
+
+removeFarmTools(@Param(':id') id:number){
+
+  
+  
+}
 
  
 }
