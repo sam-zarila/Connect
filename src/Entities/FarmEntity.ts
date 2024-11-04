@@ -17,6 +17,10 @@ export class farmEntity{
     @ApiProperty()
     name: string;
 
+    @Column()
+     @ApiProperty()
+     description:string
+
 
     @Column()
     @ApiProperty()
