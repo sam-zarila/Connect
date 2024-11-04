@@ -13,6 +13,9 @@ export class FarmtoolsService {
     @InjectRepository(farmEntity) private farmToolsRepository: Repository<farmEntity>,
   ){}
 
-  createFarmTools(){}
+  createFarmTools(farm:farmEntity){
+
+    return this.farmToolsRepository.save(farm);
+  }
  
 }
