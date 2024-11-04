@@ -28,7 +28,7 @@ import { farmEntity } from './Entities/FarmEntity';
       password: '',
       database: 'farm_connect',
       entities: [Task, notifacationEntity,listingEntity,cartEntity, farmEntity ],
-      synchronize: false,
+      synchronize: true,
     }),
   
     TasksModule,
