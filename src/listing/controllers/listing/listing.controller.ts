@@ -43,7 +43,7 @@ export class ListingController {
   @ApiOperation({summary:'deleted the listings'})
   @ApiParam({ name:'id', description:'he ID of the property', type:Number})
   @ApiResponse({status:204, description:'updtaed listings'})
-  removeListing(@Param(':id') id:number)
+  removeListing(@Param('id') id:number)
   {
       return this.listing.removeListing(id)
   }

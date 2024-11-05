@@ -31,10 +31,10 @@ export class ChemicalController {
 
   }
 
-  @Delete()
+  @Delete(':id')
   @ApiOperation({summary:'deleting chemical sales'})
   @ApiParam({name:'id', description:'is the id of the chemical', type:Number})
-  removeChemicalSales(@Param(':id') id:number){
+  removeChemicalSales(@Param('id') id:number){
 
     return this.chemicalService.deleteChemicalSales(id)
 
