@@ -16,6 +16,7 @@ import { FarmtoolsController } from './farmtools/farmtools.controller';
 
 import { FarmtoolsModule } from './farmtools/farmtools.module';
 import { farmEntity } from './Entities/FarmEntity';
+import { ChemicalModule } from './chemical/chemical.module';
 
 
 @Module({
@@ -35,7 +36,8 @@ import { farmEntity } from './Entities/FarmEntity';
     NotificationModule,
     ListingModule,
     CartModule,
-    FarmtoolsModule
+    FarmtoolsModule,
+    ChemicalModule
   ],
   controllers: [AppController, NotificationController, FarmtoolsController],
   providers: [AppService, NotificationService],
