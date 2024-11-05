@@ -33,7 +33,8 @@ findFarmTools():Promise<farmToolDto[]>{
 @ApiParam({name:'id', description:'is the id of the farm', type:Number})
 
 removeFarmTools(@Param(':id') id:number){
-
+  
+  return this.farmToolsService.removefarmTools(id)
   
   
 }
