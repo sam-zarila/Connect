@@ -18,7 +18,6 @@ import { FarmtoolsModule } from './farmtools/farmtools.module';
 import { farmEntity } from './Entities/FarmEntity';
 import { ChemicalModule } from './chemical/chemical.module';
 import { chemicalsEntity } from './chemical/entities/chemical.entity';
-import * as fs from 'fs';
 
 @Module({
   imports: [
@@ -29,16 +28,14 @@ import * as fs from 'fs';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
-        host: configService.get<string>('ONLINE_DB_HOST'),
-        port: configService.get<number>('ONLINE_DB_PORT'),
-        username: configService.get<string>('ONLINE_DB_USERNAME'),
-        password: configService.get<string>('ONLINE_DB_PASSWORD'),
-        database: configService.get<string>('ONLINE_DB_NAME'),
+        host: configService.get<string>('DB_HOST'),
+        port: configService.get<number>('DB_PORT'),
+        username: configService.get<string>('DB_USERNAME'),
+        password: configService.get<string>('DB_PASSWORD'),
+        database: configService.get<string>('DB_NAME'),
         entities: [Task, notifacationEntity, listingEntity, cartEntity, farmEntity, chemicalsEntity],
         synchronize: true,
-        ssl: {
-          ca: fs.readFileSync('certs/ca-cert.pem').toString(),
-        },
+        
       }),
       inject: [ConfigService],
     }),
