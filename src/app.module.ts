@@ -17,6 +17,7 @@ import { FarmtoolsController } from './farmtools/farmtools.controller';
 import { FarmtoolsModule } from './farmtools/farmtools.module';
 import { farmEntity } from './Entities/FarmEntity';
 import { ChemicalModule } from './chemical/chemical.module';
+import { chemicalsEntity } from './chemical/entities/chemical.entity';
 
 
 @Module({
@@ -28,7 +29,7 @@ import { ChemicalModule } from './chemical/chemical.module';
       username: 'root',
       password: '',
       database: 'farm_connect',
-      entities: [Task, notifacationEntity,listingEntity,cartEntity, farmEntity ],
+      entities: [Task, notifacationEntity,listingEntity,cartEntity, farmEntity,chemicalsEntity],
       synchronize: true,
     }),
   
