@@ -27,12 +27,18 @@ import { chemicalsEntity } from './chemical/entities/chemical.entity';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
-        type: 'mysql',
-        host: configService.get<string>('DB_HOST'),
-        port: configService.get<number>('DB_PORT'),
-        username: configService.get<string>('DB_USERNAME'),
-        password: configService.get<string>('DB_PASSWORD'),
-        database: configService.get<string>('DB_NAME'),
+        // type: 'mysql',
+        // host: configService.get<string>('DB_HOST'),
+        // port: configService.get<number>('DB_PORT'),
+        // username: configService.get<string>('DB_USERNAME'),
+        // password: configService.get<string>('DB_PASSWORD'),
+        // database: configService.get<string>('DB_NAME'),
+        // entities: [Task, notifacationEntity, listingEntity, cartEntity, farmEntity, chemicalsEntity],
+        // synchronize: true,
+
+        type: 'postgres',
+        url:'postgres://vkgmbdct:anLlR2HitiGPexxhFd_Jv4ofbcvhIMJ6@lallah.db.elephantsql.com/vkgmbdct',
+       
         entities: [Task, notifacationEntity, listingEntity, cartEntity, farmEntity, chemicalsEntity],
         synchronize: true,
         
